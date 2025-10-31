@@ -10,7 +10,7 @@ import astroExpressiveCode from "astro-expressive-code";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mk040412.github.io",
-  base: "/papers/ourobos",
+  base: "/Ouroboros-Reinforcement-Guided-Flow-Matching",
   vite: {
     plugins: [tailwindcss()],
   },
