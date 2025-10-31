@@ -10,16 +10,27 @@ favicon: favicon.svg
 description: "Project page for Ouroboros-Reinforcement-Guided-Flow-Matching"
 ---
 
+import Authors from "../components/Authors.astro";
 import Figure from "../components/Figure.astro";
 import Picture from "../components/Picture.astro";
 import HighlightedSection from "../components/HighlightedSection.astro";
+import TwoColumns from "../components/TwoColumns.astro";
+import LaTeX from "../components/LaTeX.astro";
+import Table from "../components/Table.astro";
+import { Comparison } from "../components/Comparison";
+import Video from "../components/Video.astro";
+import Links from "../components/Links.astro";
+
 import transformer from "../assets/transformer.webp";
+import dogsTrue from "../assets/dogs-true.png";
+import dogsDiffc from "../assets/dogs-diffc.png";
+import outside from "../assets/outside.mp4";
 
 <HighlightedSection>
 
 ## Abstract
 
-This is the project page for Ouroboros-Reinforcement-Guided-Flow-Matching.
+This is the project page for Ouroboros-Reinforcement-Guided-Flow-Matching. It's a showcase of what you can do with the Astro-Academia theme.
 
 </HighlightedSection>
 
@@ -27,3 +38,49 @@ This is the project page for Ouroboros-Reinforcement-Guided-Flow-Matching.
   <Picture slot="figure" src={transformer} alt="Diagram of the transformer deep learning architecture." invertInDarkMode />
   <Fragment slot="caption">Diagram of the transformer deep learning architecture.</Fragment>
 </Figure>
+
+<TwoColumns>
+  <Fragment slot="left">
+    ### Two Columns
+
+    You can use two columns to display information side-by-side. This is useful for comparing and contrasting different concepts, or for providing additional context to a figure or table. You can also use this to create a more visually interesting layout.
+  </Fragment>
+  <Picture slot="right" src={dogsTrue} alt="A dog" />
+</TwoColumns>
+
+### LaTeX
+
+You can also use LaTeX to write equations. For example, here is the equation for a normal distribution:
+
+<LaTeX>
+$$
+\\mathcal{N}(x | \\mu, \\sigma^2) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}
+$$
+</LaTeX>
+
+### Tables
+
+You can also create tables.
+
+<Table>
+| Method      | Accuracy |
+| ----------- | -------- |
+| Method A    | 80%      |
+| Method B    | 90%      |
+| **Ours**    | **95%**  |
+</Table>
+
+### Comparisons
+
+You can also create comparisons between images.
+
+<Comparison client:visible>
+    <Picture slot="first" src={dogsTrue} alt="A dog" />
+    <Picture slot="second" src={dogsDiffc} alt="A dog with diffusion noise" />
+</Comparison>
+
+### Videos
+
+You can also embed videos.
+
+<Video src={outside} />
