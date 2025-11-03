@@ -30,56 +30,22 @@ import outside from "../assets/outside.mp4";
 
 ## Abstract
 
-This is the project page for Ouroboros-Reinforcement-Guided-Flow-Matching. It's a showcase of what you can do with the Astro-Academia theme.
+Current text to image diffusion models still struggle to follow complex and
+compositional prompts, largely due to the absence of consistent signals
+throughout the denoising trajectory. We introduce OUROBOROS, a
+reinforcement guided flow matching framework that unifies critic optimiza
+tion and generative diffusion in latent space. Inspired by ControlNet style
+conditioning, our method incorporates a critic network that evaluates
+intermediate denoising steps via cross attention, producing reinforcement
+based rewards for each latent update. These reward signals are used to
+iteratively refine the flow trajectory, enabling robust alignment between
+text and image over long horizon, sparse reward scenarios. To stabilize
+representation transitions across steps, we employ cross domain module
+inspired by control net and cycle gan, ensuring dimension consistency
+and cyclic regularization between encoder–decoder flows. We expect that
+framework achieves scalable, bi directional optimization that dynamically
+corrects latent paths while maintaining generation diversity.
 
-</HighlightedSection>
-
-<Figure>
-  <Picture slot="figure" src={transformer} alt="Diagram of the transformer deep learning architecture." invertInDarkMode />
-  <Fragment slot="caption">Diagram of the transformer deep learning architecture.</Fragment>
-</Figure>
-
-<TwoColumns>
-  <Fragment slot="left">
-    ### Two Columns
-
-    You can use two columns to display information side-by-side. This is useful for comparing and contrasting different concepts, or for providing additional context to a figure or table. You can also use this to create a more visually interesting layout.
-  </Fragment>
-  <Picture slot="right" src={dogsTrue} alt="A dog" />
-</TwoColumns>
-
-### LaTeX
-
-You can also use LaTeX to write equations. For example, here is the equation for a normal distribution:
-
-<LaTeX>
-$$
-\\mathcal{N}(x | \\mu, \\sigma^2) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}
-$$
-</LaTeX>
-
-### Tables
-
-You can also create tables.
-
-<Table>
-| Method      | Accuracy |
-| ----------- | -------- |
-| Method A    | 80%      |
-| Method B    | 90%      |
-| **Ours**    | **95%**  |
-</Table>
-
-### Comparisons
-
-You can also create comparisons between images.
-
-<Comparison client:visible>
-    <Picture slot="first" src={dogsTrue} alt="A dog" />
-    <Picture slot="second" src={dogsDiffc} alt="A dog with diffusion noise" />
-</Comparison>
-
-### Videos
 
 You can also embed videos.
 
