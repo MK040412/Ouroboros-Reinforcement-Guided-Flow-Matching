@@ -2,9 +2,9 @@
 layout: ../layouts/Layout.astro
 title: "Ouroboros-Reinforcement-Guided-Flow-Matching"
 authors:
-  - name: Kang Minklyu
+  - name: Kang Minkyu
   - name: Chae jeongwoo
-  - name: Kim Junho
+  - name: Kim Jinho
 theme: device
 favicon: favicon.svg
 description: "Project page for Ouroboros-Reinforcement-Guided-Flow-Matching"
@@ -22,13 +22,13 @@ import { Comparison } from "../components/Comparison.tsx";
 import Video from "../components/Video.astro";
 import Links from "../components/Links.astro";
 
-import image1 from "../assets/1762072849272.png";
-import image2 from "../assets/1762072850648.png";
-import image3 from "../assets/1762072851693.png";
-import image4 from "../assets/1762072852778.png";
-import image5 from "../assets/1762072853869.png";
-import image6 from "../assets/1762072855003.png";
-import image7 from "../assets/1762072856121.png";
+import HDM_wTIPO from "../assets/HDM_wTIPO.png";
+import HDM_woTIPO from "../assets/HDM_woTIPO.png";
+import Janus_wTIPO from "../assets/Janus_wTIPO.png";
+import Janus_woTIPO from "../assets/Janus_woTIPO.png";
+import RouWei_wTIPO from "../assets/RouWei_wTIPO.png";
+import RouWei_woTIPO from "../assets/RouWei_woTIPO.png";
+import ConfigUI_WorkFlow from "../assets/ConfigUI_WorkFlow.png";
 
 <HighlightedSection>
 
@@ -54,10 +54,50 @@ corrects latent paths while maintaining generation diversity.
 
 ## Motivation
 
-<Picture src={image1} alt="Anime Character 1" />
-<Picture src={image2} alt="Anime Character 2" />
-<Picture src={image3} alt="Anime Character 3" />
-<Picture src={image4} alt="Anime Character 4" />
-<Picture src={image5} alt="Anime Character 5" />
-<Picture src={image6} alt="Anime Character 6" />
-<Picture src={image7} alt="Anime Character 7" />
+<div className="image-grid">
+  <figure>
+    <Picture src={HDM_wTIPO} alt="HDM with TIPO" />
+    <figcaption>HDM with TIPO</figcaption>
+  </figure>
+  <figure>
+    <Picture src={HDM_woTIPO} alt="HDM without TIPO" />
+    <figcaption>HDM without TIPO</figcaption>
+  </figure>
+  <figure>
+    <Picture src={Janus_wTIPO} alt="Janus with TIPO" />
+    <figcaption>Janus with TIPO</figcaption>
+  </figure>
+  <figure>
+    <Picture src={Janus_woTIPO} alt="Janus without TIPO" />
+    <figcaption>Janus without TIPO</figcaption>
+  </figure>
+  <figure>
+    <Picture src={RouWei_wTIPO} alt="RouWei with TIPO" />
+    <figcaption>RouWei with TIPO</figcaption>
+  </figure>
+  <figure>
+    <Picture src={RouWei_woTIPO} alt="RouWei without TIPO" />
+    <figcaption>RouWei without TIPO</figcaption>
+  </figure>
+</div>
+
+<div className="prompt-container">
+  <div className="prompt-box">
+    <strong>Prompt for images without TIPO:</strong>
+    <p>A girl raising her left arm while holding an apple. A snake is crawling in front of a girl.</p>
+  </div>
+  <div className="prompt-box">
+    <strong>Prompt for images with TIPO:</strong>
+    <p>1girl, mejiro ardan (umamusume), umamusume, ningen mame, solo, horse ears, animal ears, horse girl, tail, long hair, horse tail, blue hair, purple eyes, full body, white background, simple background, looking at viewer, braid, shirt, black footwear, white shirt, open mouth, breasts, smile, long sleeves, crown braid, waving, boots, toes, standing, blush, long shirt, t-shirt, bra strap, alternate costume, collarbone, arm up, short, barefoot, black shorts, medium breasts, medium breast reduction A girl raising her left arm while holding an apple. A snake is crawling in front of a girl's face. The background is white and there are blue ribbons flying around the girls. There are also several apples scattered on the ground near the girl masterpiece, newest, absurdres, safe</p>
+  </div>
+</div>
+
+<br />
+
+<Figure
+  src={ConfigUI_WorkFlow}
+  alt="ConfigUI Workflow"
+  caption="The image was generated using the ConfigUI workflow."
+/>
+
+Even state-of-the-art models often fail to accurately interpret and reflect factual relationships in prompts. When prompts are precisely followed, the resulting images can often be distorted or broken. This highlights a significant challenge in text-to-image generation: maintaining image quality while ensuring strict adherence to complex prompt details.
