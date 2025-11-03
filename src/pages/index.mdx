@@ -17,15 +17,9 @@ import HighlightedSection from "../components/HighlightedSection.astro";
 import TwoColumns from "../components/TwoColumns.astro";
 import LaTeX from "../components/LaTeX.astro";
 import Table from "../components/Table.astro";
-import { Comparison } from "../components/Comparison";
+import { Comparison } from "../components/Comparison.tsx";
 import Video from "../components/Video.astro";
 import Links from "../components/Links.astro";
-
-import transformer from "../assets/transformer.webp";
-import dogsTrue from "../assets/dogs-true.png";
-import dogsDiffc from "../assets/dogs-diffc.png";
-import outside from "../assets/outside.mp4";
-
 <HighlightedSection>
 
 ## Abstract
@@ -44,9 +38,8 @@ representation transitions across steps, we employ cross domain module
 inspired by control net and cycle gan, ensuring dimension consistency
 and cyclic regularization between encoder–decoder flows. We expect that
 framework achieves scalable, bi directional optimization that dynamically
+<<<<<<< HEAD
 corrects latent paths while maintaining generation diversity.
+</HighlightedSection>
 
-
-You can also embed videos.
-
-<Video src={outside} />
+## Motivation
