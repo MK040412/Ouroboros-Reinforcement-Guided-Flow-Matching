@@ -275,6 +275,86 @@ const {
 		color: var(--muted);
 	}
 
+	.highlight-box {
+		background: #fff8d8;
+		border-left: 4px solid #f0d75a;
+		padding: 16px 20px;
+		border-radius: 4px;
+		margin: 18px 0;
+	}
+
+	.highlight-box h2 {
+		margin-top: 0;
+	}
+
+	.image-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 12px;
+		margin: 16px 0;
+	}
+
+	.image-grid figure {
+		margin: 0;
+		text-align: center;
+	}
+
+	.image-grid img {
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
+		display: block;
+	}
+
+	.image-grid figcaption {
+		font-size: 14px;
+		color: var(--muted);
+		margin-top: 4px;
+	}
+
+	.prompt-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+		margin: 18px 0;
+	}
+
+	.prompt-box {
+		background: #f6f8fa;
+		border-radius: 6px;
+		padding: 14px 16px;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	.prompt-box strong {
+		display: block;
+		margin-bottom: 6px;
+	}
+
+	.prompt-box p {
+		margin: 0;
+		word-break: break-word;
+	}
+
+	.figure-block {
+		margin: 18px 0;
+	}
+
+	.figure-block img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 4px;
+	}
+
+	.figure-block figcaption {
+		text-align: center;
+		color: var(--muted);
+		font-size: 14px;
+		margin-top: 6px;
+	}
+
 	.footer-credit {
 		color: var(--muted);
 		text-align: center;
@@ -297,6 +377,12 @@ const {
 		}
 		.link-button {
 			font-size: 18px;
+		}
+		.image-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.prompt-container {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

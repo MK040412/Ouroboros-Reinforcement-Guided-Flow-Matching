@@ -14,6 +14,12 @@ const links = [
 	{ label: 'Code', href: 'https://github.com/MK040412/Ouroboros-Reinforcement-Guided-Flow-Matching' },
 	{ label: 'Author', href: 'https://mk040412.github.io/' },
 ]
+
+const fig = (name: string) => `${base}/figures/${name}`
+
+const promptWith = `1girl, mejiro ardan (umamusume), umamusume, ningen mame, solo, horse ears, animal ears, horse girl, tail, long hair, horse tail, blue hair, purple eyes, full body, white background, simple background, looking at viewer, braid, shirt, black footwear, white shirt, open mouth, breasts, smile, long sleeves, crown braid, waving, boots, toes, standing, blush, long shirt, t-shirt, bra strap, alternate costume, collarbone, arm up, short, barefoot, black shorts, medium breasts, medium breast reduction A girl raising her left arm while holding an apple. A snake is crawling in front of a girl's face. The background is white and there are blue ribbons flying around the girls. There are also several apples scattered on the ground near the girl masterpiece, newest, absurdres, safe`
+
+const promptWithout = `A girl raising her left arm while holding an apple. A snake is crawling in front of a girl.`
 ---
 
 <Layout
@@ -22,23 +28,82 @@ const links = [
 	description='A reinforcement-guided flow matching framework that unifies critic optimization and generative diffusion in latent space for improved text-to-image alignment.'
 	authors={authors}
 	links={links}
-	hero={`${base}/Ouroboros.webp`}
+	hero={fig('Ouroboros.webp')}
 	heroAlt='Ouroboros'
-	faviconHref={`${base}/Ouroboros.webp`}
+	faviconHref={fig('Ouroboros.webp')}
 >
-	<h1>Overview</h1>
-	<ul>
-		<li>
-			<b>Ouroboros</b> is a reinforcement-guided flow matching framework that unifies critic
-			optimization and generative diffusion in latent space.
-		</li>
-		<li>
-			It targets robust text-to-image alignment over long-horizon, sparse-reward denoising
-			trajectories.
-		</li>
-	</ul>
+	<div class='highlight-box'>
+		<h2>Abstract</h2>
+		<p>
+			Current text-to-image diffusion models still struggle to follow complex and compositional
+			prompts, largely due to the absence of consistent signals throughout the denoising
+			trajectory. We introduce <b>OUROBOROS</b>, a reinforcement-guided flow matching framework
+			that unifies critic optimization and generative diffusion in latent space. Inspired by
+			ControlNet-style conditioning, our method incorporates a critic network that evaluates
+			intermediate denoising steps via cross attention, producing reinforcement-based rewards for
+			each latent update. These reward signals are used to iteratively refine the flow trajectory,
+			enabling robust alignment between text and image over long-horizon, sparse-reward scenarios.
+			To stabilize representation transitions across steps, we employ a cross-domain module
+			inspired by ControlNet and CycleGAN, ensuring dimension consistency and cyclic
+			regularization between encoder–decoder flows. We expect that the framework achieves
+			scalable, bi-directional optimization that dynamically corrects latent paths while
+			maintaining generation diversity.
+		</p>
+	</div>
 
-	<h1>Method</h1>
+	<h1>Motivation</h1>
+
+	<div class='image-grid'>
+		<figure>
+			<img src={fig('HDM_wTIPO.png')} alt='HDM with TIPO' />
+			<figcaption>HDM with TIPO</figcaption>
+		</figure>
+		<figure>
+			<img src={fig('HDM_woTIPO.png')} alt='HDM without TIPO' />
+			<figcaption>HDM without TIPO</figcaption>
+		</figure>
+		<figure>
+			<img src={fig('Janus_wTIPO.png')} alt='Janus with TIPO' />
+			<figcaption>Janus with TIPO</figcaption>
+		</figure>
+		<figure>
+			<img src={fig('Janus_woTIPO.png')} alt='Janus without TIPO' />
+			<figcaption>Janus without TIPO</figcaption>
+		</figure>
+		<figure>
+			<img src={fig('RouWei_wTIPO.png')} alt='RouWei with TIPO' />
+			<figcaption>RouWei with TIPO</figcaption>
+		</figure>
+		<figure>
+			<img src={fig('RouWei_woTIPO.png')} alt='RouWei without TIPO' />
+			<figcaption>RouWei without TIPO</figcaption>
+		</figure>
+	</div>
+
+	<div class='prompt-container'>
+		<div class='prompt-box'>
+			<strong>Prompt for images with TIPO</strong>
+			<p>{promptWith}</p>
+		</div>
+		<div class='prompt-box'>
+			<strong>Prompt for images without TIPO</strong>
+			<p>{promptWithout}</p>
+		</div>
+	</div>
+
+	<figure class='figure-block'>
+		<img src={fig('ConfigUI_WorkFlow.png')} alt='ConfigUI Workflow' />
+		<figcaption>The image was generated using the ConfigUI workflow.</figcaption>
+	</figure>
+
+	<p>
+		Even state-of-the-art models often fail to accurately interpret and reflect factual
+		relationships in prompts. When prompts are precisely followed, the resulting images can often
+		be distorted or broken. This highlights a significant challenge in text-to-image generation:
+		maintaining image quality while ensuring strict adherence to complex prompt details.
+	</p>
+
+	<h1>Architecture</h1>
 	<p class='muted'>Coming soon.</p>
 
 	<h1>Results</h1>
