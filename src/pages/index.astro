@@ -9,11 +9,7 @@ const authors = [
 	{ name: 'Kim Jinho' },
 ]
 
-const links = [
-	{ label: 'Project page', href: 'https://mk040412.github.io/Ouroboros-Reinforcement-Guided-Flow-Matching/' },
-	{ label: 'Code', href: 'https://github.com/MK040412/Ouroboros-Reinforcement-Guided-Flow-Matching' },
-	{ label: 'Author', href: 'https://mk040412.github.io/' },
-]
+const links: { label: string; href: string }[] = []
 
 const fig = (name: string) => `${base}/figures/${name}`
 
@@ -105,14 +101,6 @@ const promptWithout = `A girl raising her left arm while holding an apple. A sna
 	<p class='muted'>Coming soon.</p>
 
 	<hr />
-	<h1>Citation</h1>
-	<pre class='codebox'><code>@misc{`{kang2026ouroboros,
-  title={Ouroboros: Reinforcement-Guided Flow Matching},
-  author={Kang, Minkyu and Chae, Jeongwoo and Kim, Jinho},
-  year={2026},
-  howpublished={\\url{https://mk040412.github.io/Ouroboros-Reinforcement-Guided-Flow-Matching/}}
-}`}</code></pre>
-
 	<h1>Acknowledgement</h1>
 	<p>
 		Maintained by <a href='https://mk040412.github.io/'>Kang Minkyu</a>. Part of the work surfaced
